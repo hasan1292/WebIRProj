@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include partials/head %>
+</head>
+<body class="container">
+
+<header>
+    <% include partials/header %>
+</header>
+
+<main>
+
+    <% if(signal){ %>
+    <div class="jumbotron">
+        <p><b>Sorry! No result found for your query!</b></p>
+    </div>
+    <% } %>
+    <% projCon.forEach(function(item){ %>
+    <div class="jumbotron">
+
+        <div class="row">
+
+            <div class="span1 col-xs-10">
+
+                <div class="col-md-15 portfolio-item">
+                    <a href="#">
+                        <!--<img class="img-responsive" src="http://placehold.it/700x400" alt="">-->
+                    </a>
+                    <h3>
+                        <a href=<%= item.url %>><%= item.title %></a>
+                    </h3>
+                    <!--<p><b>Source : </b><%= item.source %></p>-->
+                    <p><b>BM25 Score : </b><%= item.rankScore %></p>
+                    <p><b>Date: </b><%= item.time %></p>
+                </div>
+            </div>
+            <div class="span1 col-xs-2">
+                <% if(item.source == 'BBC'){ %>
+                <a href="http://www.bbc.com/news"><img src="images/bbc3.png" class="img-rounded" height="100%" width="100%"/></a>
+                <% }else if(item.source == 'CNN'){ %>
+                <a href="http://edition.cnn.com/"><img src="images/cnn.png" class="img-rounded" height="100%" width="100%"/></a>
+                <% }else if(item.source == 'China Daily'){ %>
+                    <a href="http://www.chinadaily.com.cn/"><img src="images/cd.png" class="img-rounded" height="100%" width="100%"/></a>
+                <% } %>
+            </div>
+        </div>
+
+    </div>
+    <% }); %>
+</main>
+
+<footer>
+    <% include partials/footer %>
+</footer>
+
+</body>
+</html>

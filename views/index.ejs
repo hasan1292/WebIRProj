@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include partials/head %>
+</head>
+<body class="container">
+
+<header>
+    <% include partials/header %>
+</header>
+
+<main>
+
+  <div class="jumbotron">
+    <form action="/search" method="post">
+      <div class="form-group">
+        <label>What are you looking for?</label>
+        <div class="container">
+          <div class="row">
+            <div class="span1 col-xs-11">
+              <input type="text" class="form-control" name="search" placeholder="Enter your search here">
+
+            </div>
+            <div class="span1 col-xs-1">
+              <button type="submit" class="btn" >Submit</button>
+            </div>
+          </div>
+        </div>
+       </div>
+      <div class="row">
+        <div class="span1 col-xs-1">
+          <input type="checkbox" name="news" value="BBC" checked> BBC<br>
+        </div>
+        <div class="span1 col-xs-1">
+          <input type="checkbox" name="news" value="CNN" checked> CNN<br>
+        </div>
+        <div class="span1 col-xs-2">
+          <input type="checkbox" name="news" value="CD" checked> China Daily<br>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</main>
+
+<footer>
+    <% include partials/footer %>
+</footer>
+
+</body>
+</html>
